@@ -1,13 +1,13 @@
 @extends('layouts.guest')
 
-@section('title', 'Visi dan Misi')
+@section('title', 'PPDB')
 
 @section('content')
 <section class="jumbotron text-white text-center d-flex align-items-center"
     style="background-image: url('{{ asset('images/default-image.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
     <div class="container">
         <h1 class="display-4 fw-bold">
-            Visi dan Misi
+            Selamat Datang Calon Peserta Didik Baru
             <br>
             SD Islam Terpadu Annida Sokaraja
         </h1>
@@ -16,27 +16,23 @@
 
 <section>
     <div class="container section-title mb-0" data-aos="fade-up">
-        <span>Visi dan Misi<br></span>
-        <h2>Visi dan Misi</h2>
+        <span>Informasi<br></span>
+        <h2>Informasi</h2>
     </div>
 
     <div class="container">
         <div class="row gy-4">
-            @forelse ($visimisi as $item)
-                <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+            @forelse ($ppdb as $item)
+                <div class="col-lg position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-center bg-warning text-white py-2">
-                        <span>VISI</span>
+                        <span>Tahun Ajaran 2025/2026</span>
                     </div>
-                    <p class="text-justify">{!! nl2br($item->visi) !!}</p>
-                </div>
-                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-center bg-warning text-white py-2">
-                        <span>MISI</span>
+                    <div class="text-center">
+                        <img src="{{ asset('storage/' . $item->brosur) }}" class="img-thumbnail mt-4" alt="Brosur">
                     </div>
-                    <p class="text-justify">{!! nl2br($item->misi) !!}</p>
                 </div>
             @empty
-                <p class="text-center text-danger">Belum ada Visi dan Misi.</p>
+                <p class="text-center text-danger">Belum ada informasi PPDB.</p>
             @endforelse
         </div>
     </div>

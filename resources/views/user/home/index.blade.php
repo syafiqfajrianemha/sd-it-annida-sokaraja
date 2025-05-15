@@ -31,14 +31,18 @@
     </div>
 
     <div class="container">
-        <div class="row gy-4">
-            <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-                <img src="{{ asset('storage/' . $sambutan->foto) }}" class="img-fluid" alt="About Image">
+        @forelse ($sambutan as $item)
+            <div class="row gy-4">
+                <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+                    <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="About Image">
+                </div>
+                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-justify">{!! nl2br($item->isi) !!}</p>
+                </div>
             </div>
-            <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-                <p class="text-justify">{!! nl2br($sambutan->isi) !!}</p>
-            </div>
-        </div>
+        @empty
+            <p class="text-center text-danger">Belum ada Sambutan.</p>
+        @endforelse
     </div>
 </section>
 
@@ -50,7 +54,7 @@
 
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-            @foreach ($prestasi as $item)
+            @forelse ($prestasi as $item)
                 <div class="col">
                     <div class="card h-100 shadow-sm" data-aos="fade-up">
                         <img src="{{ asset('storage/' . $item->foto) }}" class="card-img-top"
@@ -59,17 +63,19 @@
                             <h5 class="card-title">{{ $item->judul }}</h5>
                             <p class="card-text text-justify">{{ Str::limit(strip_tags($item->isi), 100) }}
                             </p>
-                            <a href="#" class="btn btn-primary btn-sm">Baca Selengkapnya</a>
+                            <a href="#" class="btn btn-warning text-white btn-sm">Baca Selengkapnya</a>
                         </div>
                         <div class="card-footer text-muted">
                             {{ $item->created_at->format('d M Y') }}
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <p class="text-center text-danger">Belum ada Prestasi.</p>
+            @endforelse
         </div>
         <div class="text-center mt-4">
-            <a href="" class="btn btn-warning text-white">Lihat Semua Prestasi</a>
+            <a href="{{ route('guest.prestasi') }}" class="btn btn-warning text-white">Lihat Semua Prestasi</a>
         </div>
     </div>
 </section>
@@ -82,7 +88,7 @@
 
     <div class="container">
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-            @foreach ($berita as $item)
+            @forelse ($berita as $item)
                 <div class="col">
                     <div class="card h-100 shadow-sm" data-aos="fade-up">
                         <img src="{{ asset('storage/' . $item->foto) }}" class="card-img-top"
@@ -91,17 +97,19 @@
                             <h5 class="card-title">{{ $item->judul }}</h5>
                             <p class="card-text text-justify">{{ Str::limit(strip_tags($item->isi), 100) }}
                             </p>
-                            <a href="#" class="btn btn-primary btn-sm">Baca Selengkapnya</a>
+                            <a href="#" class="btn btn-warning text-white btn-sm">Baca Selengkapnya</a>
                         </div>
                         <div class="card-footer text-muted">
                             {{ $item->created_at->format('d M Y') }}
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @empty
+                <p class="text-center text-danger">Belum ada Berita.</p>
+            @endforelse
         </div>
         <div class="text-center mt-4">
-            <a href="" class="btn btn-warning text-center text-white">Lihat Semua Berita</a>
+            <a href="{{ route('guest.berita') }}" class="btn btn-warning text-center text-white">Lihat Semua Berita</a>
         </div>
     </div>
 </section>

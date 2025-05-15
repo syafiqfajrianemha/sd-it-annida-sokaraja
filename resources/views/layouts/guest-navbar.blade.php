@@ -15,10 +15,10 @@
                         <li><a href="#">PROGRAM SEKOLAH</a></li>
                     </ul>
                 </li>
-                <li><a href="#">PPDB</a></li>
+                <li><a href="{{ route('guest.ppdb') }}" class="{{ Request::routeIs('guest.ppdb', 'guest.ppdb.*') ? 'active' : '' }}">PPDB</a></li>
                 <li><a href="{{ route('guest.ekskul') }}" class="{{ Request::routeIs('guest.ekskul', 'guest.ekskul.*') ? 'active' : '' }}">EKSKUL</a></li>
-                <li><a href="#">PRESTASI</a></li>
-                <li><a href="#">BERITA</a></li>
+                <li><a href="{{ route('guest.prestasi') }}" class="{{ Request::routeIs('guest.prestasi', 'guest.prestasi.*') ? 'active' : '' }}">PRESTASI</a></li>
+                <li><a href="{{ route('guest.berita') }}" class="{{ Request::routeIs('guest.berita', 'guest.berita.*') ? 'active' : '' }}">BERITA</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $sambutan = SambutanKepalaSekolah::latest()->first();
+        $sambutan = SambutanKepalaSekolah::latest()->get();
         $prestasi = Prestasi::latest()->limit(3)->get();
         $berita = Berita::latest()->limit(3)->get();
         return view('user.home.index', compact('sambutan', 'prestasi', 'berita'));

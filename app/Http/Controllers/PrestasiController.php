@@ -99,4 +99,10 @@ class PrestasiController extends Controller
         $prestasi->delete();
         return redirect()->route('prestasi.index')->with('message', 'Prestasi berhasil dihapus');
     }
+
+    public function guest()
+    {
+        $prestasi = Prestasi::latest()->get();
+        return view('user.prestasi.index', compact('prestasi'));
+    }
 }

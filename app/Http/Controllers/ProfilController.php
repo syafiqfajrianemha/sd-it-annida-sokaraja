@@ -9,7 +9,7 @@ class ProfilController extends Controller
 {
     public function visimisi()
     {
-        $visimisi = VisiMisi::latest()->first();
+        $visimisi = VisiMisi::latest()->get();
         return view('user.profil.visi-dan-misi.index', compact('visimisi'));
     }
 }

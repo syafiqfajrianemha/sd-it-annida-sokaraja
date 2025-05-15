@@ -43,6 +43,13 @@
         </a>
     </li>
 
+    <li class="nav-item{{ Request::routeIs('ppdb.index', 'ppdb.*') ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('ppdb.index') }}">
+            <i class="fas fa-fw fa-file-alt"></i>
+            <span>PPDB</span>
+        </a>
+    </li>
+
     <li class="nav-item{{ Request::routeIs('ekskul.index', 'ekskul.*') ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('ekskul.index') }}">
             <i class="fas fa-fw fa-file-alt"></i>

@@ -99,4 +99,10 @@ class BeritaController extends Controller
         $berita->delete();
         return redirect()->route('berita.index')->with('message', 'Berita berhasil dihapus');
     }
+
+    public function guest()
+    {
+        $berita = Berita::latest()->get();
+        return view('user.berita.index', compact('berita'));
+    }
 }

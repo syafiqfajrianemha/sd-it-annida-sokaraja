@@ -5,6 +5,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EkskulController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PpdbController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SambutanKepalaSekolahController;
@@ -20,6 +21,12 @@ Route::get('/visi-dan-misi', [ProfilController::class, 'visimisi'])->name('guest
 
 Route::get('/ekstrakulikuler', [EkskulController::class, 'guest'])->name('guest.ekskul');
 
+Route::get('/ppdb', [PpdbController::class, 'guest'])->name('guest.ppdb');
+
+Route::get('/prestasi', [PrestasiController::class, 'guest'])->name('guest.prestasi');
+
+Route::get('/berita', [BeritaController::class, 'guest'])->name('guest.berita');
+
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
@@ -28,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/berita', BeritaController::class);
     Route::resource('/admin/visi-misi', VisiMisiController::class);
     Route::resource('/admin/ekskul', EkskulController::class);
+    Route::resource('/admin/ppdb', PpdbController::class);
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

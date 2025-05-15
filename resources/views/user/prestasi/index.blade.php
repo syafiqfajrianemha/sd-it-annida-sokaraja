@@ -1,13 +1,13 @@
 @extends('layouts.guest')
 
-@section('title', 'Ekstrakulikuler')
+@section('title', 'Prestasi')
 
 @section('content')
 <section class="jumbotron text-white text-center d-flex align-items-center"
     style="background-image: url('{{ asset('images/default-image.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
     <div class="container">
         <h1 class="display-4 fw-bold">
-            Ekstrakulikuler
+            Prestasi
             <br>
             SD Islam Terpadu Annida Sokaraja
         </h1>
@@ -16,13 +16,13 @@
 
 <section>
     <div class="container section-title mb-0" data-aos="fade-up">
-        <span>Ekstrakulikuler<br></span>
-        <h2>Ekstrakulikuler</h2>
+        <span>Prestasi<br></span>
+        <h2>Prestasi</h2>
     </div>
 
     <div class="container">
         <div class="row gy-4">
-            @forelse ($ekskul as $item)
+            @forelse ($prestasi as $item)
                 <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="card flex-md-row border-0 shadow">
                         <div class="col-md-4">
@@ -30,14 +30,15 @@
                                 alt="Foto" style="max-height: 250px; object-fit: cover;">
                         </div>
                         <div class="card-body d-flex flex-column justify-content-center col-md-8">
+                            <h3 class="h3">{{ $item->judul }}</h3>
                             <p class="card-text text-justify" style="text-align: justify;">
-                                {!! nl2br($item->deskripsi) !!}
+                                {!! nl2br($item->isi) !!}
                             </p>
                         </div>
                     </div>
                 </div>
             @empty
-                <p class="text-center text-danger">Belum ada data ekstrakurikuler.</p>
+                <p class="text-center text-danger">Belum ada data prestasi.</p>
             @endforelse
         </div>
     </div>
