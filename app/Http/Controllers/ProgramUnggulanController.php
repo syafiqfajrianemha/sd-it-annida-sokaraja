@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Prestasi;
+use App\Models\ProgramUnggulan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class PrestasiController extends Controller
+class ProgramUnggulanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $prestasi = Prestasi::latest()->get();
-        return view('admin.prestasi.index', compact('prestasi'));
+        $programUnggulan = ProgramUnggulan::latest()->get();
+        return view('admin.program-unggulan.index', compact('programUnggulan'));
     }
 
     /**
@@ -22,7 +22,7 @@ class PrestasiController extends Controller
      */
     public function create()
     {
-        return view('admin.prestasi.create');
+        return view('admin.program-unggulan.create');
     }
 
     /**
@@ -31,7 +31,7 @@ class PrestasiController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'judul' => 'required',
+            'nama' => 'required',
             'foto' => 'required|image|max:2048',
             'isi' => 'required',
         ]);
@@ -40,9 +40,9 @@ class PrestasiController extends Controller
             $data['foto'] = $request->file('foto')->store('images', 'public');
         }
 
-        Prestasi::create($data);
+        ProgramUnggulan::create($data);
 
-        return redirect()->route('prestasi.index')->with('message', 'Prestasi berhasil ditambahkan');
+        return redirect()->route('program-unggulan.index')->with('message', 'Program Unggulan berhasil ditambahkan');
     }
 
     /**
@@ -50,9 +50,7 @@ class PrestasiController extends Controller
      */
     public function show($id)
     {
-        $prestasiTerbaru = Prestasi::latest()->limit(3)->get();
-        $prestasi = Prestasi::findOrFail($id);
-        return view('user.prestasi.show', compact('prestasiTerbaru', 'prestasi'));
+        return redirect()->route('program-unggulan.index');
     }
 
     /**
@@ -60,8 +58,8 @@ class PrestasiController extends Controller
      */
     public function edit($id)
     {
-        $prestasi = Prestasi::findOrFail($id);
-        return view('admin.prestasi.edit', compact('prestasi'));
+        $programUnggulan = ProgramUnggulan::findOrFail($id);
+        return view('admin.program-unggulan.edit', compact('programUnggulan'));
     }
 
     /**
@@ -70,23 +68,23 @@ class PrestasiController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
-            'judul' => 'required',
+            'nama' => 'required',
             'foto' => 'nullable|image|max:2048',
             'isi' => 'required',
         ]);
 
-        $prestasi = Prestasi::findOrFail($id);
+        $programUnggulan = ProgramUnggulan::findOrFail($id);
 
         if ($request->hasFile('foto')) {
-            if ($prestasi->foto) {
-                Storage::disk('public')->delete($prestasi->foto);
+            if ($programUnggulan->foto) {
+                Storage::disk('public')->delete($programUnggulan->foto);
             }
             $data['foto'] = $request->file('foto')->store('images', 'public');
         }
 
-        $prestasi->update($data);
+        $programUnggulan->update($data);
 
-        return redirect()->route('prestasi.index')->with('message', 'Prestasi berhasil diperbarui');
+        return redirect()->route('program-unggulan.index')->with('message', 'Program Unggulan berhasil diperbarui');
     }
 
     /**
@@ -94,17 +92,11 @@ class PrestasiController extends Controller
      */
     public function destroy($id)
     {
-        $prestasi = Prestasi::findOrFail($id);
-        if ($prestasi->foto) {
-            Storage::disk('public')->delete($prestasi->foto);
+        $programUnggulan = ProgramUnggulan::findOrFail($id);
+        if ($programUnggulan->foto) {
+            Storage::disk('public')->delete($programUnggulan->foto);
         }
-        $prestasi->delete();
-        return redirect()->route('prestasi.index')->with('message', 'Prestasi berhasil dihapus');
-    }
-
-    public function guest()
-    {
-        $prestasi = Prestasi::latest()->get();
-        return view('user.prestasi.index', compact('prestasi'));
+        $programUnggulan->delete();
+        return redirect()->route('program-unggulan.index')->with('message', 'Program Unggulan berhasil dihapus');
     }
 }

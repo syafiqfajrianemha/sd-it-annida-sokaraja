@@ -50,7 +50,9 @@ class BeritaController extends Controller
      */
     public function show($id)
     {
-        return redirect()->route('berita.index');
+        $beritaTerbaru = Berita::latest()->limit(3)->get();
+        $berita = Berita::findOrFail($id);
+        return view('user.berita.show', compact('beritaTerbaru', 'berita'));
     }
 
     /**

@@ -4,9 +4,9 @@
 
 @section('content')
 <section class="jumbotron text-white text-center d-flex align-items-center"
-    style="background-image: url('{{ asset('images/default-image.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
+    style="background-image: url('{{ asset('images/gambar-selamat-datang.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
     <div class="container">
-        <h1 class="display-4 fw-bold">Selamat Datang di SD Islam Terpadu Annida Sokaraja</h1>
+        <h1 class="display-4 fw-bold text-white" style="text-shadow: 4px 4px #333333;">Selamat Datang di SD Islam Terpadu Annida Sokaraja</h1>
     </div>
 </section>
 
@@ -46,7 +46,7 @@
     </div>
 </section>
 
-<section class="pb-0">
+<section class="team section pb-0">
     <div class="container section-title mb-0" data-aos="fade-up">
         <span>Prestasi Terbaru<br></span>
         <h2>Prestasi Terbaru</h2>
@@ -56,17 +56,17 @@
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
             @forelse ($prestasi as $item)
                 <div class="col">
-                    <div class="card h-100 shadow-sm" data-aos="fade-up">
-                        <img src="{{ asset('storage/' . $item->foto) }}" class="card-img-top"
-                            alt="Gambar Prestasi">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->judul }}</h5>
-                            <p class="card-text text-justify">{{ Str::limit(strip_tags($item->isi), 100) }}
-                            </p>
-                            <a href="#" class="btn btn-warning text-white btn-sm">Baca Selengkapnya</a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            {{ $item->created_at->format('d M Y') }}
+                    <div class="member">
+                        <a href="{{ route('guest.prestasi.detail', $item->id) }}">
+                            <div class="pic"><img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt=""></div>
+                        </a>
+                        <div class="member-info">
+                            <h4>{{ $item->judul }}</h4>
+                            <span>
+                                {{ Str::limit(strip_tags($item->isi), 100) }}
+                                <a href="{{ route('guest.prestasi.detail', $item->id) }}">Baca Selengkapnya</a>
+                            </span>
+                            <span class="text-muted">{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
                         </div>
                     </div>
                 </div>
@@ -75,12 +75,12 @@
             @endforelse
         </div>
         <div class="text-center mt-4">
-            <a href="{{ route('guest.prestasi') }}" class="btn btn-warning text-white">Lihat Semua Prestasi</a>
+            <a href="{{ route('guest.prestasi') }}" class="btn btn-primary text-white">Lihat Semua Prestasi</a>
         </div>
     </div>
 </section>
 
-<section class="pb-0">
+<section class="team section pb-0">
     <div class="container section-title mb-0" data-aos="fade-up">
         <span>Berita Terbaru<br></span>
         <h2>Berita Terbaru</h2>
@@ -90,17 +90,17 @@
         <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
             @forelse ($berita as $item)
                 <div class="col">
-                    <div class="card h-100 shadow-sm" data-aos="fade-up">
-                        <img src="{{ asset('storage/' . $item->foto) }}" class="card-img-top"
-                            alt="Gambar Berita">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->judul }}</h5>
-                            <p class="card-text text-justify">{{ Str::limit(strip_tags($item->isi), 100) }}
-                            </p>
-                            <a href="#" class="btn btn-warning text-white btn-sm">Baca Selengkapnya</a>
-                        </div>
-                        <div class="card-footer text-muted">
-                            {{ $item->created_at->format('d M Y') }}
+                    <div class="member">
+                        <a href="{{ route('guest.berita.detail', $item->id) }}">
+                            <div class="pic"><img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt=""></div>
+                        </a>
+                        <div class="member-info">
+                            <h4>{{ $item->judul }}</h4>
+                            <span>
+                                {{ Str::limit(strip_tags($item->isi), 100) }}
+                                <a href="{{ route('guest.berita.detail', $item->id) }}">Baca Selengkapnya</a>
+                            </span>
+                            <span class="text-muted">{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
             @endforelse
         </div>
         <div class="text-center mt-4">
-            <a href="{{ route('guest.berita') }}" class="btn btn-warning text-center text-white">Lihat Semua Berita</a>
+            <a href="{{ route('guest.berita') }}" class="btn btn-primary text-center text-white">Lihat Semua Berita</a>
         </div>
     </div>
 </section>

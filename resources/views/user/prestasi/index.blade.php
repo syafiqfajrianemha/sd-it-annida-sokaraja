@@ -24,18 +24,20 @@
         <div class="row gy-4">
             @forelse ($prestasi as $item)
                 <div class="col-12" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card flex-md-row border-0 shadow">
-                        <div class="col-md-4">
-                            <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid rounded h-100 w-100 object-fit-cover"
-                                alt="Foto" style="max-height: 250px; object-fit: cover;">
+                    <a href="{{ route('guest.prestasi.detail', $item->id) }}">
+                        <div class="card flex-md-row border-0 shadow">
+                            <div class="col-md-4">
+                                <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid rounded h-100 w-100 object-fit-cover"
+                                    alt="Foto" style="max-height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center col-md-8">
+                                <h3 class="h3">{{ $item->judul }}</h3>
+                                <p class="card-text text-justify" style="text-align: justify;">
+                                    {!! nl2br($item->isi) !!}
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-body d-flex flex-column justify-content-center col-md-8">
-                            <h3 class="h3">{{ $item->judul }}</h3>
-                            <p class="card-text text-justify" style="text-align: justify;">
-                                {!! nl2br($item->isi) !!}
-                            </p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             @empty
                 <p class="text-center text-danger">Belum ada data prestasi.</p>

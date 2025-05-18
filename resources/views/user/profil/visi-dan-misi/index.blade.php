@@ -24,13 +24,13 @@
         <div class="row gy-4">
             @forelse ($visimisi as $item)
                 <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-center bg-warning text-white py-2">
-                        <span>VISI</span>
+                    <div class="text-center bg-warning text-white py-2 rounded-top">
+                        <span><strong>VISI</strong></span>
                     </div>
                     <p class="text-justify">{!! nl2br($item->visi) !!}</p>
                 </div>
                 <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-center bg-warning text-white py-2">
+                    <div class="text-center bg-warning text-white py-2 rounded-top">
                         <span>MISI</span>
                     </div>
                     <p class="text-justify">{!! nl2br($item->misi) !!}</p>

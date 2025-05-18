@@ -11,8 +11,9 @@
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{ route('guest.profil.visi-dan-misi') }}">VISI DAN MISI</a></li>
-                        <li><a href="#">IDENTIAS SEKOLAH</a></li>
-                        <li><a href="#">PROGRAM SEKOLAH</a></li>
+                        <li><a href="{{ route('guest.profil.identitas-sekolah') }}">IDENTITAS SEKOLAH</a></li>
+                        <li><a href="{{ route('guest.profil.struktural') }}">STRUKTURAL</a></li>
+                        <li><a href="{{ route('guest.profil.programsekolah') }}">PROGRAM SEKOLAH</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('guest.ppdb') }}" class="{{ Request::routeIs('guest.ppdb', 'guest.ppdb.*') ? 'active' : '' }}">PPDB</a></li>

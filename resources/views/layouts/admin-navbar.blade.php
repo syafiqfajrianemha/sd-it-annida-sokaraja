@@ -38,33 +38,61 @@
 
     <li class="nav-item{{ Request::routeIs('visi-misi.index', 'visi-misi.*') ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('visi-misi.index') }}">
-            <i class="fas fa-fw fa-file-alt"></i>
+            <i class="fas fa-fw fa-bullseye"></i>
             <span>Visi dan Misi</span>
+        </a>
+    </li>
+
+    <li class="nav-item{{ Request::routeIs('struktural.index', 'struktural.*') ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('struktural.index') }}">
+            <i class="fas fa-fw fa-user-tie"></i>
+            <span>Struktural</span>
+        </a>
+    </li>
+
+    <li class="nav-item{{ Request::routeIs('struktural-komite.index', 'struktural-komite.*') ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('struktural-komite.index') }}">
+            <i class="fas fa-fw fa-users"></i>
+            <span>Struktural Komite</span>
+        </a>
+    </li>
+
+    <li class="nav-item{{ Request::routeIs('program-unggulan.index', 'program-unggulan.*') ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('program-unggulan.index') }}">
+            <i class="fas fa-fw fa-star"></i>
+            <span>Program Unggulan</span>
+        </a>
+    </li>
+
+    <li class="nav-item{{ Request::routeIs('program-paguyuban-komite.index', 'program-paguyuban-komite.*') ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('program-paguyuban-komite.index') }}">
+            <i class="fas fa-fw fa-handshake"></i>
+            <span>Program Paguyuban/Komite</span>
         </a>
     </li>
 
     <li class="nav-item{{ Request::routeIs('ppdb.index', 'ppdb.*') ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('ppdb.index') }}">
-            <i class="fas fa-fw fa-file-alt"></i>
+            <i class="fas fa-fw fa-address-card"></i>
             <span>PPDB</span>
         </a>
     </li>
 
     <li class="nav-item{{ Request::routeIs('ekskul.index', 'ekskul.*') ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('ekskul.index') }}">
-            <i class="fas fa-fw fa-file-alt"></i>
+            <i class="fas fa-fw fa-medal"></i>
             <span>Ekstrakulikuler</span>
         </a>
     </li>
 
-    {{-- <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider my-0">
 
     <li class="nav-item{{ Request::routeIs('manajemen-akun.index', 'manajemen-akun.*') ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('manajemen-akun.index') }}">
             <i class="fas fa-fw fa-user"></i>
             <span>Manajemen Akun</span>
         </a>
-    </li> --}}
+    </li>
 
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

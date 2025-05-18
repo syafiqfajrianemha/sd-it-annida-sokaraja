@@ -4,17 +4,17 @@
             <div class="col-lg-4 col-md-6 footer-about">
                 <h4 class="text-white">ALAMAT SEKOLAH</h4>
                 <div class="footer-contact pt-3">
-                    <p>Jl. Suparjo Rustam No.8, Dusun III, Berkoh, Kec. Purwokerto Sel., Kabupaten Banyumas, Jawa
-                        Tengah 53146, Indonesia</p>
+                    <p>
+                        Jl. Soepardjo Roestam No.1 RT 05/ 12, Sokaraja Kulon, Kecamatan Sokaraja, Kabupaten Banyumas, Jawa Tengah (53181)
+                    </p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-12">
-                <h4 class="text-white">INFORMASI KONTAK</h4>
+                <h4 class="text-white">NARAHUBUNG</h4>
                 <div class="footer-contact pt-3">
-                    <p>0881 2345 6789</p>
-                    <p class="mt-3"><strong>info@sditannida.sch.id</strong></p>
-                    <p><strong>sditannidaskj@yahoo.co.id</strong></p>
+                    <p>082242203315 (Ust Ari)</p>
+                    <p>085712536632 (Ust Okta)</p>
                 </div>
             </div>
 
