@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="jumbotron text-white text-center d-flex align-items-center"
-    style="background-image: url('{{ asset('images/default-image.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
+    style="background-image: url('{{ asset('images/bg.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
     <div class="container">
         <h1 class="display-4 fw-bold">
             Program Sekolah
@@ -94,6 +94,37 @@
                     </table>
                 </div>
 
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <img src="{{ asset('images/program-harian.png') }}" class="img-thumbnail" alt="Program Harian">
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ asset('images/program-mingguan.png') }}" class="img-thumbnail" alt="Program Mingguan">
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <img src="{{ asset('images/program-bulanan.png') }}" class="img-thumbnail" alt="Program Bulanan">
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ asset('images/program-semester.png') }}" class="img-thumbnail" alt="Program Semester">
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <img src="{{ asset('images/program-tahunan.png') }}" class="img-thumbnail" alt="Program Tahunan">
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ asset('images/program-insidental.png') }}" class="img-thumbnail" alt="Program Insidental">
             </div>
         </div>
     </div>

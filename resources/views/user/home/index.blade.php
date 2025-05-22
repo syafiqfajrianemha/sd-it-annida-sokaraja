@@ -80,7 +80,7 @@
     </div>
 </section>
 
-<section class="team section pb-0">
+<section class="team section">
     <div class="container section-title mb-0" data-aos="fade-up">
         <span>Berita Terbaru<br></span>
         <h2>Berita Terbaru</h2>
@@ -114,7 +114,39 @@
     </div>
 </section>
 
-<section>
+<section id="stats pb-0" class="stats section">
+    <div class="container section-title mb-0" data-aos="fade-up">
+        <span>PESERTA DIDIK, GURU DAN STAFF<br></span>
+        <h2>PESERTA DIDIK, GURU DAN STAFF</h2>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-12">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="119" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>SISWA</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="29" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>GURU</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="stats-item text-center w-100 h-100">
+                    <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>STAFF</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-0">
     <div class="container" data-aos="fade-up">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2125998852534!2d109.27227959999999!3d-7.441714100000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655c04a4f4d4ad%3A0x2929705afcea301c!2sSD%20Islam%20Terpadu%20Annida%20Sokaraja!5e0!3m2!1sid!2sid!4v1747131657154!5m2!1sid!2sid"

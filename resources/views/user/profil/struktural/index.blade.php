@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="jumbotron text-white text-center d-flex align-items-center"
-    style="background-image: url('{{ asset('images/default-image.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
+    style="background-image: url('{{ asset('images/bg.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
     <div class="container">
         <h1 class="display-4 fw-bold">
             Struktural
@@ -14,7 +14,7 @@
     </div>
 </section>
 
-<section>
+<section class="mb-0">
     <div class="container section-title mb-0" data-aos="fade-up">
         <span>Struktural<br></span>
         <h2>Struktural</h2>
@@ -22,13 +22,19 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="text-center bg-primary text-white py-2 rounded-top">
-                    <span><strong>SD IT ANNIDA SOKARAJA</strong></span>
+            <div class="row">
+                <div class="col">
+                    <img src="{{ asset('images/struktural.svg') }}" class="img-thumbnail" alt="Struktural Komite">
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover">
+                    <table class="table table-bordered table-striped table-hover mt-5">
                         <thead class="table-light text-center">
                             <tr>
                                 <th>No</th>
@@ -57,24 +63,36 @@
 
                             @if ($struktural->isEmpty())
                                 <tr>
-                                    <td colspan="6" class="text-center">Data tidak tersedia.</td>
+                                    <td colspan="7" class="text-center">Data tidak tersedia.</td>
                                 </tr>
                             @endif
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="row justify-content-center mt-5">
+<section class="pt-0">
+    <div class="container section-title mb-0" data-aos="fade-up">
+        <span>Struktural Komite<br></span>
+        <h2>Struktural Komite</h2>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <img src="{{ asset('images/struktural-komite.svg') }}" class="img-thumbnail" alt="Struktural Komite">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col-lg-10">
-                <div class="text-center bg-warning text-white py-2 rounded-top">
-                    <span><strong>KOMITE</strong></span>
-                </div>
-
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover">
+                    <table class="table table-bordered table-striped table-hover mt-5">
                         <thead class="table-light text-center">
                             <tr>
                                 <th>No</th>
@@ -99,7 +117,6 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </div>
     </div>

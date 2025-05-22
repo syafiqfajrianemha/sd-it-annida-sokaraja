@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="jumbotron text-white text-center d-flex align-items-center"
-    style="background-image: url('{{ asset('images/default-image.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
+    style="background-image: url('{{ asset('images/bg.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
     <div class="container">
         <h1 class="display-4 fw-bold">
             Visi dan Misi
