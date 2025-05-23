@@ -14,6 +14,7 @@
                         <li><a href="{{ route('guest.profil.identitas-sekolah') }}">IDENTITAS SEKOLAH</a></li>
                         <li><a href="{{ route('guest.profil.struktural') }}">STRUKTURAL</a></li>
                         <li><a href="{{ route('guest.profil.programsekolah') }}">PROGRAM SEKOLAH</a></li>
+                        <li><a href="{{ route('guest.profil.fasilitas') }}">FASILITAS</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('guest.ppdb') }}" class="{{ Request::routeIs('guest.ppdb', 'guest.ppdb.*') ? 'active' : '' }}">PPDB</a></li>

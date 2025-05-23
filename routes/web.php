@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EkskulController;
+use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManajemenAkunController;
 use App\Http\Controllers\PpdbController;
@@ -26,6 +27,7 @@ Route::get('/visi-dan-misi', [ProfilController::class, 'visimisi'])->name('guest
 Route::get('/identitas-sekolah', [ProfilController::class, 'identitassekolah'])->name('guest.profil.identitas-sekolah');
 Route::get('/struktural', [ProfilController::class, 'struktural'])->name('guest.profil.struktural');
 Route::get('/program-sekolah', [ProfilController::class, 'programsekolah'])->name('guest.profil.programsekolah');
+Route::get('/fasilitas', [ProfilController::class, 'fasilitas'])->name('guest.profil.fasilitas');
 
 Route::get('/ekstrakulikuler', [EkskulController::class, 'guest'])->name('guest.ekskul');
 
@@ -50,6 +52,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/struktural-komite', StrukturalKomiteController::class);
     Route::resource('/admin/program-unggulan', ProgramUnggulanController::class);
     Route::resource('/admin/program-paguyuban-komite', ProgramPaguyubanKomiteController::class);
+    Route::resource('/admin/fasilitas', FasilitasController::class);
 
     Route::resource('/admin/manajemen-akun', ManajemenAkunController::class);
 

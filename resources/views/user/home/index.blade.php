@@ -32,12 +32,12 @@
 
     <div class="container">
         @forelse ($sambutan as $item)
-            <div class="row gy-4">
+            <div class="row gy-4 align-items-center">
                 <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
                     <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="About Image">
                 </div>
-                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
-                    <p class="text-justify">{!! nl2br($item->isi) !!}</p>
+                <div class="col-lg-6 content text-justify" data-aos="fade-up" data-aos-delay="200">
+                    {!! nl2br($item->isi) !!}
                 </div>
             </div>
         @empty

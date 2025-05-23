@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fasilitas;
 use App\Models\ProgramPaguyubanKomite;
 use App\Models\ProgramUnggulan;
 use App\Models\Struktural;
@@ -34,5 +35,11 @@ class ProfilController extends Controller
         $programUnggulan = ProgramUnggulan::latest()->get();
         $programPaguyubanKomite = ProgramPaguyubanKomite::latest()->get();
         return view('user.profil.program-sekolah.index', compact('programUnggulan', 'programPaguyubanKomite'));
+    }
+
+    public function fasilitas()
+    {
+        $fasilitas = Fasilitas::latest()->get();
+        return view('user.profil.fasilitas.index', compact('fasilitas'));
     }
 }

@@ -71,6 +71,13 @@
         </a>
     </li>
 
+    <li class="nav-item{{ Request::routeIs('fasilitas.index', 'fasilitas.*') ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('fasilitas.index') }}">
+            <i class="fas fa-fw fa-location-arrow"></i>
+            <span>Fasilitas</span>
+        </a>
+    </li>
+
     <li class="nav-item{{ Request::routeIs('ppdb.index', 'ppdb.*') ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('ppdb.index') }}">
             <i class="fas fa-fw fa-address-card"></i>
