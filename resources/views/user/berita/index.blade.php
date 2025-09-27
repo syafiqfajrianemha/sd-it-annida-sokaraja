@@ -25,7 +25,7 @@
             @forelse ($berita as $item)
                 <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <a href="{{ route('guest.berita.detail', $item->id) }}">
-                        <div class="card flex-md-row border-0 shadow">
+                        <div class="card flex-md-row border-0 shadow align-items-center">
                             <div class="col-md-4">
                                 <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid rounded h-100 w-100 object-fit-cover"
                                     alt="Foto" style="max-height: 250px; object-fit: cover;">
