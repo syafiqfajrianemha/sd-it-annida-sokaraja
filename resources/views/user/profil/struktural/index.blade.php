@@ -21,7 +21,7 @@
     </div>
 
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center text-center">
             <div class="row">
                 <div class="col">
                     <img src="{{ asset('images/struktural.svg') }}" class="img-thumbnail" alt="Struktural Komite">
@@ -81,7 +81,7 @@
     </div>
 
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center text-center">
             <div class="col">
                 <img src="{{ asset('images/struktural-komite.svg') }}" class="img-thumbnail" alt="Struktural Komite">
             </div>
