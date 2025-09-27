@@ -15,7 +15,6 @@
             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
                 <img src="{{ asset('storage/' . $prestasi->foto) }}" alt="Foto" class="img-fluid services-img">
                 <h3>{{ $prestasi->judul }}</h3>
-                <p class="text-muted">{{ \Carbon\Carbon::parse($prestasi->created_at)->translatedFormat('d F Y') }}</p>
                 <p>{!! nl2br($prestasi->isi) !!}</p>
             </div>
 
