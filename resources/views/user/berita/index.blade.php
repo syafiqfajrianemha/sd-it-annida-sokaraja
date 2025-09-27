@@ -33,7 +33,7 @@
                             <div class="card-body d-flex flex-column justify-content-center col-md-8">
                                 <h3 class="h3">{{ $item->judul }}</h3>
                                 <p class="card-text text-justify" style="text-align: justify;">
-                                    {!! nl2br($item->isi) !!}
+                                    {!! nl2br(Str::limit(strip_tags($item->isi), 500)) !!}
                                 </p>
                             </div>
                         </div>

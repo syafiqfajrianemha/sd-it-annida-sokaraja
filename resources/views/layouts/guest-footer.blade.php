@@ -5,7 +5,7 @@
                 <h4 class="text-white">ALAMAT SEKOLAH</h4>
                 <div class="footer-contact pt-3">
                     <p>
-                        Jl. Soepardjo Roestam No.1 RT 05/ 12, Sokaraja Kulon, Kecamatan Sokaraja, Kabupaten Banyumas, Jawa Tengah (53181)
+                        Jl. Suparjo Rustam RT 02/ RW 12, Sokaraja Kulon, Kecamatan Sokaraja, Kabupaten Banyumas, Jawa Tengah (53181)
                     </p>
                 </div>
             </div>
@@ -13,8 +13,8 @@
             <div class="col-lg-4 col-md-12">
                 <h4 class="text-white">NARAHUBUNG</h4>
                 <div class="footer-contact pt-3">
-                    <p>082242203315 (Ust Ari)</p>
-                    <p>085712536632 (Ust Okta)</p>
+                    <p>082242203315 (Ustadzah Ari)</p>
+                    <p>087891488850 (Ustadzah Ella)</p>
                 </div>
             </div>
 

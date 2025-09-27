@@ -124,22 +124,22 @@
         <div class="row gy-4">
             <div class="col-lg-4 col-md-12">
                 <div class="stats-item text-center w-100 h-100">
-                    <span data-purecounter-start="0" data-purecounter-end="119" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>SISWA</p>
+                    <span data-purecounter-start="0" data-purecounter-end="101" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>PESERTA DIDIK</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-12">
                 <div class="stats-item text-center w-100 h-100">
-                    <span data-purecounter-start="0" data-purecounter-end="29" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>GURU</p>
+                    <span data-purecounter-start="0" data-purecounter-end="31" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>DEWAN GURU (USTADZ/USTADZAH)</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-12">
                 <div class="stats-item text-center w-100 h-100">
-                    <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>STAFF</p>
+                    <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>STAFF/ADMIN</p>
                 </div>
             </div>
         </div>

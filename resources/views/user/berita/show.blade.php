@@ -15,7 +15,6 @@
             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
                 <img src="{{ asset('storage/' . $berita->foto) }}" alt="Foto" class="img-fluid services-img">
                 <h3>{{ $berita->judul }}</h3>
-                <p class="text-muted">{{ \Carbon\Carbon::parse($berita->created_at)->translatedFormat('d F Y') }}</p>
                 <p>{!! nl2br($berita->isi) !!}</p>
             </div>
 
