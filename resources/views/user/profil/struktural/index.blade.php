@@ -78,10 +78,9 @@
                                 alt="Foto" style="max-height: 250px; object-fit: cover;">
                         </div>
                         <div class="card-body d-flex flex-column justify-content-center col-md-8">
-                            <h3 class="h3">{{ $item->nama_lengkap }}</h3>
+                            <h4 class="h4">{{ $item->nama_lengkap }}</h4>
                             <p class="card-text text-justify mb-0" style="text-align: justify;">{{ $item->nip }}</p>
                             <p class="card-text text-justify mb-0" style="text-align: justify;">{{ $item->jabatan }}</p>
-                            <p class="card-text text-justify mb-0" style="text-align: justify;">{{ $item->pendidikan_terakhir }}</p>
                         </div>
                     </div>
                 </div>
