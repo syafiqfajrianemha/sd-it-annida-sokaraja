@@ -21,12 +21,14 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Foto</th>
                         <th>Nama Lengkap</th>
+                        <th>NIP</th>
                         <th>L/P</th>
                         <th>Jabatan</th>
                         <th>Pendidikan Terakhir</th>
-                        <th>Tanggal Mulai Kerja</th>
-                        <th>Status Pegawai</th>
+                        {{-- <th>Tanggal Mulai Kerja</th> --}}
+                        {{-- <th>Status Pegawai</th> --}}
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -34,12 +36,16 @@
                     @foreach ($struktural as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
+                            <td>
+                                <img src="{{ $item->foto != null ? asset('storage/' . $item->foto) : asset('images/default-image.jpg') }}" alt="Foto Guru" width="150">
+                            </td>
                             <td>{{ $item->nama_lengkap }}</td>
+                            <td>{{ $item->nip ?? '-' }}</td>
                             <td>{{ $item->jenis_kelamin }}</td>
                             <td>{{ $item->jabatan }}</td>
                             <td>{{ $item->pendidikan_terakhir }}</td>
-                            <td>{{ \Carbon\Carbon::parse($item->tanggal_mulai_kerja)->format('d-m-Y') }}</td>
-                            <td>{{ $item->status_pegawai }}</td>
+                            {{-- <td>{{ \Carbon\Carbon::parse($item->tanggal_mulai_kerja)->format('d-m-Y') }}</td> --}}
+                            {{-- <td>{{ $item->status_pegawai }}</td> --}}
                             <td>
                                 <a href="{{ route('struktural.edit', $item->id) }}" class="btn btn-success btn-sm mb-1">Edit</a>
 

@@ -50,12 +50,12 @@
         </a>
     </li>
 
-    <li class="nav-item{{ Request::routeIs('struktural-komite.index', 'struktural-komite.*') ? ' active' : '' }}">
+    {{-- <li class="nav-item{{ Request::routeIs('struktural-komite.index', 'struktural-komite.*') ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('struktural-komite.index') }}">
             <i class="fas fa-fw fa-users"></i>
             <span>Struktural Komite</span>
         </a>
-    </li>
+    </li> --}}
 
     <li class="nav-item{{ Request::routeIs('program-unggulan.index', 'program-unggulan.*') ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('program-unggulan.index') }}">

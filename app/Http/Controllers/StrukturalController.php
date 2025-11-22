@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Struktural;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class StrukturalController extends Controller
 {
@@ -29,16 +30,22 @@ class StrukturalController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'nama_lengkap' => 'required|string|max:255',
+            'nip' => 'required',
             'jenis_kelamin' => 'required|in:L,P',
             'jabatan' => 'required|string|max:255',
             'pendidikan_terakhir' => 'required|string|max:255',
-            'tanggal_mulai_kerja' => 'required|date',
-            'status_pegawai' => 'required|string|max:255',
+            'foto' => 'required|image|max:2048',
+            // 'tanggal_mulai_kerja' => 'required|date',
+            // 'status_pegawai' => 'required|string|max:255',
         ]);
 
-        Struktural::create($request->all());
+        if ($request->hasFile('foto')) {
+            $data['foto'] = $request->file('foto')->store('images', 'public');
+        }
+
+        Struktural::create($data);
 
         return redirect()->route('struktural.index')->with('message', 'Struktural berhasil ditambahkan');
     }
@@ -65,18 +72,27 @@ class StrukturalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $data = $request->validate([
             'nama_lengkap' => 'required|string|max:255',
+            'nip' => 'required',
             'jenis_kelamin' => 'required|in:L,P',
             'jabatan' => 'required|string|max:255',
             'pendidikan_terakhir' => 'required|string|max:255',
-            'tanggal_mulai_kerja' => 'required|date',
-            'status_pegawai' => 'required|string|max:255',
+            'foto' => 'nullable|image|max:2048',
+            // 'tanggal_mulai_kerja' => 'required|date',
+            // 'status_pegawai' => 'required|string|max:255',
         ]);
 
         $struktural = Struktural::findOrFail($id);
 
-        $struktural->update($request->all());
+        if ($request->hasFile('foto')) {
+            if ($struktural->foto) {
+                Storage::disk('public')->delete($struktural->foto);
+            }
+            $data['foto'] = $request->file('foto')->store('images', 'public');
+        }
+
+        $struktural->update($data);
 
         return redirect()->route('struktural.index')->with('message', 'Struktural berhasil diedit');
     }

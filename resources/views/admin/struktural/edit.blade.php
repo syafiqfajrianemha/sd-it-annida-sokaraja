@@ -10,7 +10,7 @@
     Edit Struktural
 </h1>
 
-<form action="{{ route('struktural.update', $struktural->id) }}" method="POST">
+<form action="{{ route('struktural.update', $struktural->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
 
@@ -37,15 +37,29 @@
             </div>
 
             <div class="form-group mt-3">
-                <label>Jabatan <span class="text-danger">*</span></label>
-                <input type="text" name="jabatan" value="{{ old('jabatan', $struktural->jabatan) }}" class="form-control @error('jabatan') is-invalid @enderror" required>
-                @error('jabatan')
-                    <div class="invalid-feedback">{{ $message }}</div>
+                <label for="image">Foto<span class="text-danger">*</span></label>
+                <input type="file" onchange="previewImage()" class="form-control @error('foto') is-invalid @enderror" id="image" name="foto">
+                @error('foto')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
                 @enderror
+
+                @if ($struktural->foto)
+                    <img src="{{ asset('storage/' . $struktural->foto) }}" alt="Foto" class="img-thumbnail img-preview mt-2" width="200">
+                @endif
             </div>
         </div>
 
         <div class="col-md-6">
+            <div class="form-group">
+                <label>NIP <span class="text-danger">*</span></label>
+                <input type="number" name="nip" value="{{ old('nip', $struktural->nip) }}" class="form-control @error('nip') is-invalid @enderror" required>
+                @error('nip')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
             <div class="form-group">
                 <label>Pendidikan Terakhir <span class="text-danger">*</span></label>
                 <input type="text" name="pendidikan_terakhir" value="{{ old('pendidikan_terakhir', $struktural->pendidikan_terakhir) }}" class="form-control @error('pendidikan_terakhir') is-invalid @enderror" required>
@@ -55,23 +69,35 @@
             </div>
 
             <div class="form-group">
+                <label>Jabatan <span class="text-danger">*</span></label>
+                <input type="text" name="jabatan" value="{{ old('jabatan', $struktural->jabatan) }}" class="form-control @error('jabatan') is-invalid @enderror" required>
+                @error('jabatan')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            {{-- <div class="form-group">
                 <label>Tanggal Mulai Kerja <span class="text-danger">*</span></label>
                 <input type="date" name="tanggal_mulai_kerja" value="{{ old('tanggal_mulai_kerja', $struktural->tanggal_mulai_kerja) }}" class="form-control @error('tanggal_mulai_kerja') is-invalid @enderror" required>
                 @error('tanggal_mulai_kerja')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
+            </div> --}}
 
-            <div class="form-group mt-3">
+            {{-- <div class="form-group mt-3">
                 <label>Status Pegawai <span class="text-danger">*</span></label>
                 <input type="text" name="status_pegawai" value="{{ old('status_pegawai', $struktural->status_pegawai) }}" class="form-control @error('status_pegawai') is-invalid @enderror" required>
                 @error('status_pegawai')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
+            </div> --}}
         </div>
     </div>
 
     <button type="submit" class="btn btn-primary mt-4 mb-5">Update</button>
 </form>
 @endsection
+
+@push('script')
+    <script src="{{ asset('js/imgpreview.js') }}"></script>
+@endpush

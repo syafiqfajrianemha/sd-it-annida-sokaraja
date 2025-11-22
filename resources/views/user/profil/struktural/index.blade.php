@@ -32,7 +32,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-10">
+            {{-- <div class="col-lg-10">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover mt-5">
                         <thead class="table-light text-center">
@@ -69,12 +69,28 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> --}}
+            @foreach ($struktural as $item)
+                <div class="col-lg-4 mt-5">
+                    <div class="card flex-md-row border-0 shadow align-items-center">
+                        <div class="col-md-4">
+                            <img src="{{ $item->foto != null ? asset('storage/' . $item->foto) : asset('images/default-image.jpg') }}" class="img-fluid rounded h-100 w-100 object-fit-cover"
+                                alt="Foto" style="max-height: 250px; object-fit: cover;">
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-center col-md-8">
+                            <h3 class="h3">{{ $item->nama_lengkap }}</h3>
+                            <p class="card-text text-justify mb-0" style="text-align: justify;">{{ $item->nip }}</p>
+                            <p class="card-text text-justify mb-0" style="text-align: justify;">{{ $item->jabatan }}</p>
+                            <p class="card-text text-justify mb-0" style="text-align: justify;">{{ $item->pendidikan_terakhir }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
 
-<section class="pt-0">
+{{-- <section class="pt-0">
     <div class="container section-title mb-0" data-aos="fade-up">
         <span>Struktural Komite<br></span>
         <h2>Struktural Komite</h2>
@@ -120,5 +136,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection

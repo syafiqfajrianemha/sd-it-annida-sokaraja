@@ -26,8 +26,9 @@ class ProfilController extends Controller
     public function struktural()
     {
         $struktural = Struktural::latest()->get();
-        $strukturalKomite = StrukturalKomite::latest()->get();
-        return view('user.profil.struktural.index', compact('struktural', 'strukturalKomite'));
+        // $strukturalKomite = StrukturalKomite::latest()->get();
+        // return view('user.profil.struktural.index', compact('struktural', 'strukturalKomite'));
+        return view('user.profil.struktural.index', compact('struktural'));
     }
 
     public function programSekolah()
