@@ -25,7 +25,7 @@
             @forelse ($ppdb as $item)
                 <div class="col-lg position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
                     <div class="text-center bg-warning text-white py-2">
-                        <span>Tahun Ajaran 2025/2026</span>
+                        <span>Tahun Ajaran {{ $item->tahun_ajaran }}</span>
                     </div>
                     <div class="text-center">
                         <img src="{{ asset('storage/' . $item->brosur) }}" class="img-thumbnail mt-4" alt="Brosur">
