@@ -43,10 +43,10 @@
         </a>
     </li>
 
-    <li class="nav-item{{ Request::routeIs('struktural.index', 'struktural.*') ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('struktural.index') }}">
+    <li class="nav-item{{ Request::routeIs('guru-dan-staff.index', 'guru-dan-staff.*') ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('guru-dan-staff.index') }}">
             <i class="fas fa-fw fa-user-tie"></i>
-            <span>Struktural</span>
+            <span>Guru dan Staff</span>
         </a>
     </li>
 

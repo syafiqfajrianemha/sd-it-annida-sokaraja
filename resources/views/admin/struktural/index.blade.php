@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Struktural')
+@section('title', 'Guru dan Staff')
 
 @push('style')
     <link href="{{ asset('sb-admin/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
@@ -9,11 +9,11 @@
 @section('content')
 <div id="flash-data" data-flashdata="{{ session('message') }}"></div>
 
-<h1 class="h3 mb-3 text-gray-800">Struktural</h1>
+<h1 class="h3 mb-3 text-gray-800">Guru dan Staff</h1>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <a href="{{ route('struktural.create') }}" class="btn btn-primary">Tambah</a>
+        <a href="{{ route('guru-dan-staff.create') }}" class="btn btn-primary">Tambah</a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -23,7 +23,7 @@
                         <th>No</th>
                         <th>Foto</th>
                         <th>Nama Lengkap</th>
-                        <th>NIP</th>
+                        <th>NIY</th>
                         <th>L/P</th>
                         <th>Jabatan</th>
                         <th>Pendidikan Terakhir</th>
@@ -47,9 +47,9 @@
                             {{-- <td>{{ \Carbon\Carbon::parse($item->tanggal_mulai_kerja)->format('d-m-Y') }}</td> --}}
                             {{-- <td>{{ $item->status_pegawai }}</td> --}}
                             <td>
-                                <a href="{{ route('struktural.edit', $item->id) }}" class="btn btn-success btn-sm mb-1">Edit</a>
+                                <a href="{{ route('guru-dan-staff.edit', $item->id) }}" class="btn btn-success btn-sm mb-1">Edit</a>
 
-                                <form action="{{ route('struktural.destroy', $item->id) }}" method="POST" class="d-inline form-delete">
+                                <form action="{{ route('guru-dan-staff.destroy', $item->id) }}" method="POST" class="d-inline form-delete">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm mb-1">Hapus</button>

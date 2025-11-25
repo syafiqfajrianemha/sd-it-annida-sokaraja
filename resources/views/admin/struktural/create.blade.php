@@ -1,16 +1,16 @@
 @extends('layouts.admin')
 
-@section('title', 'Tambah Struktural')
+@section('title', 'Tambah Guru dan Staff')
 
 @section('content')
 <h1 class="h3 mb-3 text-gray-800">
-    <a href="{{ route('struktural.index') }}" class="text-dark">
+    <a href="{{ route('guru-dan-staff.index') }}" class="text-dark">
         <i class="fas fa-fw fa-arrow-left mr-3"></i>
     </a>
-    Tambah Struktural
+    Tambah Guru dan Staff
 </h1>
 
-<form action="{{ route('struktural.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('guru-dan-staff.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-md-6">
@@ -48,8 +48,8 @@
 
         <div class="col-md-6">
             <div class="form-group">
-                <label>NIP <span class="text-danger">*</span></label>
-                <input type="number" name="nip" value="{{ old('nip') }}" class="form-control @error('nip') is-invalid @enderror" required>
+                <label>NIY</label>
+                <input type="text" name="nip" value="{{ old('nip') }}" class="form-control @error('nip') is-invalid @enderror">
                 @error('nip')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror

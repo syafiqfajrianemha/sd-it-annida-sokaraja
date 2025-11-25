@@ -25,7 +25,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.check');
 
 Route::get('/visi-dan-misi', [ProfilController::class, 'visimisi'])->name('guest.profil.visi-dan-misi');
 Route::get('/identitas-sekolah', [ProfilController::class, 'identitassekolah'])->name('guest.profil.identitas-sekolah');
-Route::get('/struktural', [ProfilController::class, 'struktural'])->name('guest.profil.struktural');
+Route::get('/guru-dan-staff', [ProfilController::class, 'struktural'])->name('guest.profil.struktural');
 Route::get('/program-sekolah', [ProfilController::class, 'programsekolah'])->name('guest.profil.programsekolah');
 Route::get('/fasilitas', [ProfilController::class, 'fasilitas'])->name('guest.profil.fasilitas');
 
@@ -48,7 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/visi-misi', VisiMisiController::class);
     Route::resource('/admin/ekskul', EkskulController::class);
     Route::resource('/admin/ppdb', PpdbController::class);
-    Route::resource('/admin/struktural', StrukturalController::class);
+    Route::resource('/admin/guru-dan-staff', StrukturalController::class);
     Route::resource('/admin/struktural-komite', StrukturalKomiteController::class);
     Route::resource('/admin/program-unggulan', ProgramUnggulanController::class);
     Route::resource('/admin/program-paguyuban-komite', ProgramPaguyubanKomiteController::class);

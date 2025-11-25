@@ -1,13 +1,13 @@
 @extends('layouts.guest')
 
-@section('title', 'Struktural')
+@section('title', 'Guru dan Staff')
 
 @section('content')
 <section class="jumbotron text-white text-center d-flex align-items-center"
     style="background-image: url('{{ asset('images/bg.jpg') }}'); background-size: cover; background-position: center; height: 100vh;">
     <div class="container">
         <h1 class="display-4 fw-bold">
-            Struktural
+            Guru dan Staff
             <br>
             SD Islam Terpadu Annida Sokaraja
         </h1>
@@ -16,11 +16,11 @@
 
 <section class="mb-0">
     <div class="container section-title mb-0" data-aos="fade-up">
-        <span>Struktural<br></span>
-        <h2>Struktural</h2>
+        <span>Guru dan Staff<br></span>
+        <h2>Guru dan Staff</h2>
     </div>
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="row justify-content-center text-center">
             <div class="row">
                 <div class="col">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container">
         <div class="row justify-content-center">

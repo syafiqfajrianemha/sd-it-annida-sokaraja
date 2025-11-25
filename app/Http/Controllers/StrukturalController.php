@@ -32,7 +32,7 @@ class StrukturalController extends Controller
     {
         $data = $request->validate([
             'nama_lengkap' => 'required|string|max:255',
-            'nip' => 'required',
+            'nip' => 'nullable',
             'jenis_kelamin' => 'required|in:L,P',
             'jabatan' => 'required|string|max:255',
             'pendidikan_terakhir' => 'required|string|max:255',
@@ -47,7 +47,7 @@ class StrukturalController extends Controller
 
         Struktural::create($data);
 
-        return redirect()->route('struktural.index')->with('message', 'Struktural berhasil ditambahkan');
+        return redirect()->route('guru-dan-staff.index')->with('message', 'Guru dan Staff berhasil ditambahkan');
     }
 
     /**
@@ -55,7 +55,7 @@ class StrukturalController extends Controller
      */
     public function show($id)
     {
-        return redirect()->route('struktural.index');
+        return redirect()->route('guru-dan-staff.index');
     }
 
     /**
@@ -74,7 +74,7 @@ class StrukturalController extends Controller
     {
         $data = $request->validate([
             'nama_lengkap' => 'required|string|max:255',
-            'nip' => 'required',
+            'nip' => 'nullable',
             'jenis_kelamin' => 'required|in:L,P',
             'jabatan' => 'required|string|max:255',
             'pendidikan_terakhir' => 'required|string|max:255',
@@ -94,7 +94,7 @@ class StrukturalController extends Controller
 
         $struktural->update($data);
 
-        return redirect()->route('struktural.index')->with('message', 'Struktural berhasil diedit');
+        return redirect()->route('guru-dan-staff.index')->with('message', 'Guru dan Staff berhasil diedit');
     }
 
     /**
@@ -104,6 +104,6 @@ class StrukturalController extends Controller
     {
         $struktural = Struktural::findOrFail($id);
         $struktural->delete();
-        return redirect()->route('struktural.index')->with('message', 'Struktural berhasil dihapus');
+        return redirect()->route('guru-dan-staff.index')->with('message', 'Guru dan Staff berhasil dihapus');
     }
 }
