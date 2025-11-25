@@ -12,7 +12,7 @@
                     <ul>
                         <li><a href="{{ route('guest.profil.visi-dan-misi') }}">VISI DAN MISI</a></li>
                         <li><a href="{{ route('guest.profil.identitas-sekolah') }}">IDENTITAS SEKOLAH</a></li>
-                        <li><a href="{{ route('guest.profil.struktural') }}">GURU & STAFF</a></li>
+                        <li><a href="{{ route('guest.profil.struktural') }}">GURU DAN STAFF</a></li>
                         <li><a href="{{ route('guest.profil.programsekolah') }}">PROGRAM SEKOLAH</a></li>
                         <li><a href="{{ route('guest.profil.fasilitas') }}">FASILITAS</a></li>
                     </ul>
